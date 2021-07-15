@@ -1,1 +1,61 @@
-<mxfile host="app.diagrams.net" modified="2021-07-15T08:36:19.766Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" version="14.8.6" etag="2ayap1DS6AMHwxMp24g5" type="github"><diagram id="Rg3t3ZgAIxPmIPJQsHCW">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-07-15T08:49:13.171Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="3bvkZrfVOsHDUQOtaUL4" version="14.8.6" type="github">
+  <diagram id="Rg3t3ZgAIxPmIPJQsHCW" name="Page-1">
+    <mxGraphModel dx="782" dy="436" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-2" value="Amazon CloudWatch" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.cloudwatch;" vertex="1" parent="1">
+          <mxGeometry x="30" y="120" width="80" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-3" value="AWS &lt;br&gt;Cloud Watch Event&lt;br&gt;Cron Based" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="15" y="55" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-4" value="AWS Lambda" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
+          <mxGeometry x="220" y="10" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-5" value="AWS Lambda" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
+          <mxGeometry x="220" y="240" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-6" value="Amazon DynamoDB" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.dynamodb;" vertex="1" parent="1">
+          <mxGeometry x="425" y="105" width="80" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-11" value="Trigger Stop &lt;br&gt;Over weekend" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="130" y="105" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-12" value="Trigger Start After &lt;br&gt;Weekend" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="90" y="250" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-13" value="Stop RDS Instances having &lt;br&gt;NON-PROD Tag" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="55" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-14" value="start RDS Instances having &lt;br&gt;NON-PROD Tag" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="345" y="250" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-15" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="aXe0QUdgSVS8LQKhwUWt-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="145" as="sourcePoint" />
+            <mxPoint x="160" y="95" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-16" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="aXe0QUdgSVS8LQKhwUWt-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="185" as="sourcePoint" />
+            <mxPoint x="160" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-17" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="aXe0QUdgSVS8LQKhwUWt-5" target="aXe0QUdgSVS8LQKhwUWt-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="290" as="sourcePoint" />
+            <mxPoint x="370" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXe0QUdgSVS8LQKhwUWt-18" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="aXe0QUdgSVS8LQKhwUWt-4" target="aXe0QUdgSVS8LQKhwUWt-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="110" as="sourcePoint" />
+            <mxPoint x="370" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
