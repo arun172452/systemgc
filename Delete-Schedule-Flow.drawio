@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-15T09:51:39.319Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="xnJ_3dKmyFyalj6VLvxj" version="14.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-07-15T09:59:24.554Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="8YTzw9mOTfRq63c_DUEk" version="14.8.6" type="github">
   <diagram id="ReX5ge0tVLc89h1IRUny" name="Page-1">
     <mxGraphModel dx="782" dy="436" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -8,16 +8,103 @@
           <mxGeometry x="40" y="80" width="128" height="128" as="geometry" />
         </mxCell>
         <mxCell id="gj4PWX5UzHdsblrl47T5-2" value="Amazon API Gateway" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.api_gateway;" vertex="1" parent="1">
-          <mxGeometry x="240" y="30" width="80" height="110" as="geometry" />
+          <mxGeometry x="270" y="10" width="80" height="110" as="geometry" />
         </mxCell>
         <mxCell id="gj4PWX5UzHdsblrl47T5-3" value="AWS Lambda" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
-          <mxGeometry x="400" y="50" width="70" height="100" as="geometry" />
+          <mxGeometry x="480" y="30" width="70" height="100" as="geometry" />
         </mxCell>
         <mxCell id="gj4PWX5UzHdsblrl47T5-4" value="Amazon CloudWatch" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.cloudwatch;" vertex="1" parent="1">
           <mxGeometry x="64" y="310" width="80" height="110" as="geometry" />
         </mxCell>
         <mxCell id="gj4PWX5UzHdsblrl47T5-5" value="AWS Lambda" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
-          <mxGeometry x="320" y="320" width="70" height="100" as="geometry" />
+          <mxGeometry x="340" y="390" width="70" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-6" value="Amazon DynamoDB" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.dynamodb;" vertex="1" parent="1">
+          <mxGeometry x="540" y="190" width="80" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-7" value="Amazon S3" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
+          <mxGeometry x="330" y="195" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-9" value="" style="endArrow=classic;startArrow=none;html=1;" edge="1" parent="1" source="gj4PWX5UzHdsblrl47T5-10" target="gj4PWX5UzHdsblrl47T5-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="123" as="sourcePoint" />
+            <mxPoint x="220" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-10" value="1.Delete &lt;br&gt;Schedule(VM/DB/NAS)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="144" y="85" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-11" value="" style="endArrow=none;startArrow=classic;html=1;" edge="1" parent="1" target="gj4PWX5UzHdsblrl47T5-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="123" as="sourcePoint" />
+            <mxPoint x="270" y="80.4666666666667" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-12" value="" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1" source="gj4PWX5UzHdsblrl47T5-2" target="gj4PWX5UzHdsblrl47T5-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="115" as="sourcePoint" />
+            <mxPoint x="440" y="85" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="410" y="85" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-13" value="2. /Delete Request" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="355" y="60" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-14" value="" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="190" as="sourcePoint" />
+            <mxPoint x="480" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-15" value="4. Delete DB Script/SSH key" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="320" y="150" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-16" value="" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1" target="gj4PWX5UzHdsblrl47T5-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="190" as="sourcePoint" />
+            <mxPoint x="620" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-17" value="3.Fetch S3 SSH key Object ID/DB Script ID&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="560" y="120" width="250" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-18" value="5.Delete Schdule entry in table" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="500" y="150" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-19" value="Event Based om EC2 Terminate/Delete" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry y="280" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-20" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="gj4PWX5UzHdsblrl47T5-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="144" y="370" as="sourcePoint" />
+            <mxPoint x="194" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-21" value="Triggers" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="180" y="360" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-22" value="" style="endArrow=classic;html=1;exitX=0.429;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="gj4PWX5UzHdsblrl47T5-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="350" as="sourcePoint" />
+            <mxPoint x="370" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-23" value="Delete SSH Key If Applicable" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="315" y="320" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-24" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="gj4PWX5UzHdsblrl47T5-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="415" y="430" as="sourcePoint" />
+            <mxPoint x="465" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="445" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gj4PWX5UzHdsblrl47T5-25" value="Delete EC2 entry from VM Schedule table" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="430" y="380" width="240" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
