@@ -43,6 +43,9 @@ func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 		}
 		for idx := range resp.Reservations {
 			for _, inst := range resp.Reservations[idx].Instances {
+				if(*inst.State.Code == 48){
+					continue
+				}
 				for _, tag := range inst.Tags {
 					if (*tag.Key == "Name") || (*tag.Key == "name") {
 						instanceDe := instanceInfo{InstanceId:*inst.InstanceId,Name:*tag.Value}
