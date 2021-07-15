@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-07-15T09:13:47.141Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="if_boq8nTAlI1bczXhQN" version="14.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-07-15T09:14:55.763Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="XFRoO63kV-_omRCAVEmi" version="14.8.6" type="github">
   <diagram id="XEkHLmezWZI4c1WCaYPN" name="Page-1">
-    <mxGraphModel dx="782" dy="1536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="898" dy="1536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -154,6 +154,18 @@
         </mxCell>
         <mxCell id="NAQCBL6RXrsDhcxio9aU-44" value="start" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="690" y="380" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NAQCBL6RXrsDhcxio9aU-45" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.8;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="NAQCBL6RXrsDhcxio9aU-4" target="NAQCBL6RXrsDhcxio9aU-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="450" as="sourcePoint" />
+            <mxPoint x="340" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NAQCBL6RXrsDhcxio9aU-46" value="OnPremise VM start Queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="370" y="590" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NAQCBL6RXrsDhcxio9aU-47" value="OnPremise VM stop Queue" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="370" y="-160" width="160" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
