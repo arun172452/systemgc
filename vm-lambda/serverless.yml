@@ -23,6 +23,7 @@ provider:
     - Effect: "Allow"
       Action:
         - "ec2:DescribeInstances"
+        - dynamodb:*
       Resource:
         "*"
 package:
@@ -42,3 +43,27 @@ functions:
           method: get
     environment:
       aws_region: eu-central-1
+      dynamo_table: systemgc-vm-registry
+
+resources:
+  Resources:
+    GatewayResponseDefault4XX:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+        ResponseType: DEFAULT_4XX
+        RestApiId:
+          Ref: 'ApiGatewayRestApi'
+    NotesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: systemgc-vm-registry
+        AttributeDefinitions:
+          - AttributeName: UUID
+            AttributeType: S
+        KeySchema:
+          - AttributeName: UUID
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST

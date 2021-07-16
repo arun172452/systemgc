@@ -10,11 +10,28 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
+	guuid "github.com/google/uuid"
+	"github.com/guregu/dynamo"
 )
 
 var (
 	region    = os.Getenv("aws_region")
+	tableName = os.Getenv("dynamo_table")
+	table     dynamo.Table
 )
+
+type SystemGCVM struct {
+	UUID                     guuid.UUID `json:"uuid"`
+	UserId                   string     `json:"userid"`
+	VmName                   string     `json:"vmname"`
+	VmType                   string     `json:"vmtype"`
+	InstanceId               string     `json:"instanceid,omitempty" ,dynamo:",omitempty"`
+	IpAddress                string     `json:"ipaddress,omitempty" ,dynamo:",omitempty"`
+	SanCleanUp               string     `json:"sancleanup,omitempty" ,dynamo:",omitempty"`
+	AgentInstalled           string     `json:"agent,omitempty" ,dynamo:",omitempty"`
+	SshKeyPath               string     `json:"keypath,omitempty" ,dynamo:",omitempty"`
+	CreationDate            time.Time  `json:"creation_date,omitempty" ,dynamo:",omitempty"`
+}
 
 type instanceInfo struct {
     InstanceId       string `json:"instanceId"`
@@ -76,6 +93,13 @@ func response(body string, statusCode int) (events.APIGatewayProxyResponse, erro
 		}}, nil
 }
 
+func connectDb() {
+	sess := session.Must(session.NewSession())
+	db := dynamo.New(sess, &aws.Config{Region: aws.String(region)})
+	table = db.Table(tableName)
+}
+
 func main() {
+	connectDb()
 	lambda.Start(Handler)
 }
