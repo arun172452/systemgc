@@ -1,0 +1,37 @@
+service: file-upload-listener
+frameworkVersion: '>=2.0.0 <3.0.0'
+
+custom:
+  bucket_name: rskautomation
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: eu-central-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: "arn:aws:s3:::rskautomation/*"
+    - Effect: "Allow"
+      Action:
+        - dynamodb:*
+      Resource:
+        "*"
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+functions:
+  replicate:
+    handler: bin/listener
+    environment:
+      region: eu-central-1
+      table_vm: systemgc-vm-registry
+    events:
+      - s3:
+          bucket: ${self:custom.bucket_name}
+          existing: true
+          event: s3:ObjectCreated:*
