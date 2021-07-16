@@ -9,7 +9,7 @@ def lambda_handler(event, context):
                 vid=vol.id
 				v=ec2.Volume(vol.id)
                 v.delete()
-                print "Deleted " +vid
+                print "Deleted Volume with out any tags" +vid
                 continue
             for tag in vol.tags:
                 if tag['Key'] == 'Autodelete':
@@ -18,4 +18,4 @@ def lambda_handler(event, context):
                         vid=vol.id
                         v=ec2.Volume(vol.id)
                         v.delete()
-                        print "Deleted " +vid
+                        print "Deleted EBS with Autodelete not NO" +vid
