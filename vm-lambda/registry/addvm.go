@@ -13,11 +13,13 @@ import (
 	guuid "github.com/google/uuid"
 	"github.com/guregu/dynamo"
 	log "github.com/sirupsen/logrus"
+	"github.com/aws/aws-sdk-go/service/s3"
 )
 
 var (
 	region    = os.Getenv("aws_region")
 	tableName = os.Getenv("dynamo_table")
+	bucketName = os.Getenv("s3_bucket_name")
 	table     dynamo.Table
 )
 
@@ -59,6 +61,15 @@ func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 		log.Errorf("CreateEntry %s: %s", requestVM.InstanceId, err)
 		return response(err.Error(), 400)
 	}
+
+	if (retunData.SanCleanUp=="yes") && (retunData.AgentInstalled=="no") {
+		url, err := getSignedUrlForSshKeyUpload(retunData)
+		if err!=nil {
+			log.Errorf("Error Creating Signed Url %s: %s", requestVM.InstanceId, err)
+		} else{
+			retunData.SshKeyPath = url
+		}
+	}
     jsonString, err := json.Marshal(retunData)
 	if err != nil {
 		fmt.Println("MarshalError", err.Error())
@@ -76,6 +87,23 @@ func response(body string, statusCode int) (events.APIGatewayProxyResponse, erro
 		}}, nil
 }
 
+func getSignedUrlForSshKeyUpload(data SystemGCVM) (string, error){
+	sess, err := session.NewSession(&aws.Config{
+        Region: aws.String(region)},
+    )
+	svc := s3.New(sess)
+	fileNAme := data.UUID.String() +".pub"
+	req, _ := svc.PutObjectRequest(&s3.PutObjectInput{
+        Bucket: aws.String(bucketName),
+        Key:    aws.String(fileNAme),
+    })
+	query := req.HTTPRequest.URL.Query()
+	query.Add("x-amz-meta-type", "vm")
+	query.Add("x-amz-meta-uuid", data.UUID.String())
+	req.HTTPRequest.URL.RawQuery = query.Encode()
+    str, err := req.Presign(15 * time.Minute)
+	return str,err
+}
 func createEntry(data SystemGCVM) (SystemGCVM, error) {
 	// set insert date
 	data.CreationDate = time.Now()
