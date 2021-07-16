@@ -45,6 +45,19 @@ functions:
       aws_region: eu-central-1
       dynamo_table: systemgc-vm-registry
 
+  registry:
+    handler: bin/registry
+    package:
+      include:
+        - ./bin/registry
+    events:
+      - http:
+          path: registry
+          method: post
+          cors: true
+    environment:
+      dynamo_table: systemgc-vm-registry
+      aws_region: eu-central-1
 resources:
   Resources:
     GatewayResponseDefault4XX:
