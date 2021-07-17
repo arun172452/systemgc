@@ -1,0 +1,35 @@
+service: vm-stop-scheduler
+
+frameworkVersion: '>=2.0.0 <3.0.0'
+
+provider:
+  tags:
+    platform: systemgc
+  name: aws
+  runtime: go1.x
+  region: eu-central-1
+
+# you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - dynamodb:*
+        - SES:*
+        - SNS:*
+      Resource: "*"
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+functions:
+  registry:
+    handler: bin/registry
+    events:
+      - schedule: cron(0 19 ? * FRI *)
+    environment:
+      ec2_sns_topic: arn:aws:sns:eu-central-1:957065358755:ec2-stop-event
+      dynamo_table: systemgc-vm-registry
+      aws_region: eu-central-1
