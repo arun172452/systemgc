@@ -1,12 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-16T07:42:57.255Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="dQkJtoZ3sH5rQ7Css7l0" version="14.8.6" type="github" pages="2">
-  <diagram id="VZICcWRFOJP2kb1DqosG" name="Page-1">
-    <mxGraphModel dx="782" dy="436" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="app.diagrams.net" modified="2021-07-17T07:57:02.365Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="IMdsg3MkpAYlznxkY3fu" version="14.8.6" type="github">
   <diagram id="tFZjKesdVoR_Wh5Ui7Vk" name="Page-2">
     <mxGraphModel dx="782" dy="1536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -61,7 +53,7 @@
         <mxCell id="J9jAqvIsXzl0PLYxBhgr-11" value="5. Return Singed upload URL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="yF2jjFJjA-9MAOKjVbNL-1" vertex="1">
           <mxGeometry x="550" y="40" width="170" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="J9jAqvIsXzl0PLYxBhgr-12" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="yF2jjFJjA-9MAOKjVbNL-1" edge="1" source="J9jAqvIsXzl0PLYxBhgr-2">
+        <mxCell id="J9jAqvIsXzl0PLYxBhgr-12" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="yF2jjFJjA-9MAOKjVbNL-1" source="J9jAqvIsXzl0PLYxBhgr-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="580" y="160" as="sourcePoint" />
             <mxPoint x="720" y="210" as="targetPoint" />
@@ -76,34 +68,34 @@
         <mxCell id="J9jAqvIsXzl0PLYxBhgr-15" value="7. Response" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="yF2jjFJjA-9MAOKjVbNL-1" vertex="1">
           <mxGeometry x="180" y="140" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="zFPvABQE_j9gT5AW24Re-2" value="" style="endArrow=classic;html=1;" edge="1" parent="yF2jjFJjA-9MAOKjVbNL-1" source="J9jAqvIsXzl0PLYxBhgr-0" target="J9jAqvIsXzl0PLYxBhgr-3">
+        <mxCell id="zFPvABQE_j9gT5AW24Re-2" value="" style="endArrow=classic;html=1;" parent="yF2jjFJjA-9MAOKjVbNL-1" source="J9jAqvIsXzl0PLYxBhgr-0" target="J9jAqvIsXzl0PLYxBhgr-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="380" y="60" as="sourcePoint" />
             <mxPoint x="430" y="10" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zFPvABQE_j9gT5AW24Re-3" value="8. Upload ssh key using Signed url" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="yF2jjFJjA-9MAOKjVbNL-1">
+        <mxCell id="zFPvABQE_j9gT5AW24Re-3" value="8. Upload ssh key using Signed url" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="yF2jjFJjA-9MAOKjVbNL-1" vertex="1">
           <mxGeometry x="200" width="200" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="zFPvABQE_j9gT5AW24Re-4" value="AWS Lambda" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.lambda;" vertex="1" parent="yF2jjFJjA-9MAOKjVbNL-1">
+        <mxCell id="zFPvABQE_j9gT5AW24Re-4" value="AWS Lambda" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.lambda;" parent="yF2jjFJjA-9MAOKjVbNL-1" vertex="1">
           <mxGeometry x="850" y="-70" width="80" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="zFPvABQE_j9gT5AW24Re-5" value="" style="endArrow=classic;html=1;" edge="1" parent="yF2jjFJjA-9MAOKjVbNL-1" target="zFPvABQE_j9gT5AW24Re-4">
+        <mxCell id="zFPvABQE_j9gT5AW24Re-5" value="" style="endArrow=classic;html=1;" parent="yF2jjFJjA-9MAOKjVbNL-1" target="zFPvABQE_j9gT5AW24Re-4" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="670" y="-140" as="sourcePoint" />
             <mxPoint x="720" y="-190" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zFPvABQE_j9gT5AW24Re-6" value="9. Trigger Lambda on S3 Bucket file upload" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="yF2jjFJjA-9MAOKjVbNL-1">
+        <mxCell id="zFPvABQE_j9gT5AW24Re-6" value="9. Trigger Lambda on S3 Bucket file upload" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="yF2jjFJjA-9MAOKjVbNL-1" vertex="1">
           <mxGeometry x="680" y="-140" width="250" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="zFPvABQE_j9gT5AW24Re-7" value="" style="endArrow=classic;html=1;" edge="1" parent="yF2jjFJjA-9MAOKjVbNL-1" source="zFPvABQE_j9gT5AW24Re-4" target="J9jAqvIsXzl0PLYxBhgr-4">
+        <mxCell id="zFPvABQE_j9gT5AW24Re-7" value="" style="endArrow=classic;html=1;" parent="yF2jjFJjA-9MAOKjVbNL-1" source="zFPvABQE_j9gT5AW24Re-4" target="J9jAqvIsXzl0PLYxBhgr-4" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="865" y="140" as="sourcePoint" />
             <mxPoint x="915" y="90" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zFPvABQE_j9gT5AW24Re-8" value="10. Add Object id for UUID of file metadata" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="yF2jjFJjA-9MAOKjVbNL-1">
+        <mxCell id="zFPvABQE_j9gT5AW24Re-8" value="10. Add Object id for UUID of file metadata" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="yF2jjFJjA-9MAOKjVbNL-1" vertex="1">
           <mxGeometry x="730" y="80" width="240" height="20" as="geometry" />
         </mxCell>
       </root>
