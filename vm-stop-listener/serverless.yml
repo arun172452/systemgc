@@ -1,0 +1,24 @@
+service: vm-stop-service
+frameworkVersion: '>=2.0.0 <3.0.0'
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: eu-central-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - - SNS:*
+      Resource: "*"
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+functions:
+  stoplistener:
+    handler: bin/listener
+    events:
+      - sns: arn:aws:sns:eu-central-1:957065358755:vm-stop-event

@@ -33,7 +33,7 @@ var (
 	table      dynamo.Table
 	snsTopic   = os.Getenv("ec2_sns_topic")
 	region     = os.Getenv("aws_region")
-	vmSnsTopic = os.Getenv("ec2_sns_topic")
+	vmSnsTopic = os.Getenv("vm_sns_topic")
 )
 
 func main() {
