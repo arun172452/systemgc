@@ -8,27 +8,33 @@ language: Go
  
 
 Following endpoints provided:
-1. GET endpoint with type parameter (/get/{type}) --> Type in (onpremise/aws)
-   Sample Response:
-   [{"instanceId":"i-0092445d5b636238a","name":"arun-linux"}]
-2. Post endpoint  /dev/registry
+1. Post endpoint  /dev/registry
 
 Sample input Json:
 
 {
   "userid": "arunl",
-  "vmname": "ukpsrv2",
-  "vmtype": "onpremise",
-  "instanceid": "192.168.2.1",
-  "ipaddress": "192.168.2.1",
-  "sancleanup": "NA"
+  "vmname": "ukvm037",
+  "dbtype": "oracle",
+  "dburl": "jdbc:oracle:thin:@192.168.34.25:1622:xe",
+  "dbuser": "rskadmin",
+  "dbscript": "yes"
  }
  
+{
+  "userid": "arunl",
+  "vmname": "ukvm037",
+  "dbtype": "oracle",
+  "dburl": "jdbc:oracle:thin:@192.168.34.25:1622:xe",
+  "dbuser": "rskadmin",
+  "dbscript": "no"
+ }
+
  {
   "userid": "arunl",
-  "vmname": "arun-linux",
-  "vmtype": "aws",
-  "instanceid": "i-23456ffggss",
-  "ipaddress": "NA",
-  "sancleanup": "NA"
+  "vmname": "ukvm037",
+  "dbtype": "postgresql",
+  "dburl": "jdbc:oracle:thin:@192.168.34.25:1622:xe",
+  "dbuser": "rskadmin",
+  "dbscript": "no"
  }
