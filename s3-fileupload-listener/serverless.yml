@@ -30,6 +30,7 @@ functions:
     environment:
       region: eu-central-1
       table_vm: systemgc-vm-registry
+      table_db: systemgc-db-registry
     events:
       - s3:
           bucket: ${self:custom.bucket_name}

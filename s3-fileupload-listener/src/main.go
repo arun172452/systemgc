@@ -5,34 +5,47 @@ import (
 	"fmt"
 	"os"
 	"time"
-	
+
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/s3"
+	guuid "github.com/google/uuid"
 	"github.com/guregu/dynamo"
-	 guuid "github.com/google/uuid"
 )
 
 var (
-	region    = os.Getenv("region")
+	region  = os.Getenv("region")
 	vmTable = os.Getenv("table_vm")
-	table     dynamo.Table
+	dbTable = os.Getenv("table_db")
+	table   dynamo.Table
 )
 
 type SystemGCVM struct {
-	UUID                     guuid.UUID `json:"uuid"`
-	UserId                   string     `json:"userid"`
-	VmName                   string     `json:"vmname"`
-	VmType                   string     `json:"vmtype"`
-	InstanceId               string     `json:"instanceid,omitempty" ,dynamo:",omitempty"`
-	IpAddress                string     `json:"ipaddress,omitempty" ,dynamo:",omitempty"`
-	SanCleanUp               string     `json:"sancleanup,omitempty" ,dynamo:",omitempty"`
-	AgentInstalled           string     `json:"agent,omitempty" ,dynamo:",omitempty"`
-	SshKeyPath               string     `json:"keypath,omitempty" ,dynamo:",omitempty"`
-	CreationDate             time.Time  `json:"creation_date,omitempty" ,dynamo:",omitempty"`
+	UUID           guuid.UUID `json:"uuid"`
+	UserId         string     `json:"userid"`
+	VmName         string     `json:"vmname"`
+	VmType         string     `json:"vmtype"`
+	InstanceId     string     `json:"instanceid,omitempty" ,dynamo:",omitempty"`
+	IpAddress      string     `json:"ipaddress,omitempty" ,dynamo:",omitempty"`
+	SanCleanUp     string     `json:"sancleanup,omitempty" ,dynamo:",omitempty"`
+	AgentInstalled string     `json:"agent,omitempty" ,dynamo:",omitempty"`
+	SshKeyPath     string     `json:"keypath,omitempty" ,dynamo:",omitempty"`
+	CreationDate   time.Time  `json:"creation_date,omitempty" ,dynamo:",omitempty"`
+}
+
+type DbRegistration struct {
+	UUID         guuid.UUID `json:"uuid"`
+	UserId       string     `json:"userid"`
+	DbType       string     `json:"dbtype"`
+	DbUrl        string     `json:"dburl"`
+	DbUser       string     `json:"dbuser"`
+	DbScript     string     `json:"dbscript"`
+	TableRegex   string     `json:"tableregex,omitempty" ,dynamo:",omitempty"`
+	ScriptName   string     `json:"filename,omitempty" ,dynamo:",omitempty"`
+	CreationDate time.Time  `json:"creation_date,omitempty" ,dynamo:",omitempty"`
 }
 
 func Handler(ctx context.Context, S3Event events.S3Event) {
@@ -59,12 +72,32 @@ func Handler(ctx context.Context, S3Event events.S3Event) {
 	}
 	uploadedFor := DerefString(result.Metadata["Type"])
 	uuid := DerefString(result.Metadata["Uuid"])
-	if uploadedFor=="vm"{
+	if uploadedFor == "db" {
+		connectDb(dbTable)
+		//Get entry
+		var cps []DbRegistration
+		table.Scan().Filter("$ = ?", "UUID", uuid).All(&cps)
+		if len(cps) != 0 {
+			var p DbRegistration
+			err := table.Get("UUID", cps[0].UUID).One(&p)
+			if err != nil {
+				fmt.Println(err.Error())
+				return
+			}
+			p.ScriptName = S3Event.Records[0].S3.Object.Key
+
+			err = table.Put(p).Run()
+			if err != nil {
+				fmt.Println(err.Error())
+			}
+		}
+	}
+	if uploadedFor == "vm" {
 		connectDb(vmTable)
 		//Get entry
 		var cps []SystemGCVM
 		table.Scan().Filter("$ = ?", "UUID", uuid).All(&cps)
-		if len(cps)!=0 {
+		if len(cps) != 0 {
 			var p SystemGCVM
 			err := table.Get("UUID", cps[0].UUID).One(&p)
 			if err != nil {
@@ -88,11 +121,11 @@ func connectDb(tableName string) {
 }
 
 func DerefString(s *string) string {
-    if s != nil {
-        return *s
-    }
+	if s != nil {
+		return *s
+	}
 
-    return ""
+	return ""
 }
 
 func main() {

@@ -1,0 +1,74 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: db-registration-service
+
+frameworkVersion: '>=2.0.0 <3.0.0'
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: eu-central-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - dynamodb:*
+        - s3:*
+      Resource:
+        "*"
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: "arn:aws:s3:::rskautomation/*"
+package:
+ individually: true
+ exclude:
+   - ./**
+
+functions:
+  registry:
+    handler: bin/registry
+    package:
+      include:
+        - ./bin/registry
+    events:
+      - http:
+          path: registry
+          method: post
+          cors: true
+    environment:
+      dynamo_table: systemgc-db-registry
+      aws_region: eu-central-1
+      s3_bucket_name: rskautomation
+resources:
+  Resources:
+    GatewayResponseDefault4XX:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+        ResponseType: DEFAULT_4XX
+        RestApiId:
+          Ref: 'ApiGatewayRestApi'
+    DataBaseSub:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: systemgc-db-registry
+        AttributeDefinitions:
+          - AttributeName: UUID
+            AttributeType: S
+        KeySchema:
+          - AttributeName: UUID
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
