@@ -17,10 +17,11 @@ import (
 )
 
 var (
-	region  = os.Getenv("region")
-	vmTable = os.Getenv("table_vm")
-	dbTable = os.Getenv("table_db")
-	table   dynamo.Table
+	region   = os.Getenv("region")
+	vmTable  = os.Getenv("table_vm")
+	dbTable  = os.Getenv("table_db")
+	nasTable = os.Getenv("table_nas")
+	table    dynamo.Table
 )
 
 type SystemGCVM struct {
@@ -47,6 +48,16 @@ type DbRegistration struct {
 	TableRegex   string     `json:"tableregex,omitempty" ,dynamo:",omitempty"`
 	ScriptName   string     `json:"filename,omitempty" ,dynamo:",omitempty"`
 	CreationDate time.Time  `json:"creation_date,omitempty" ,dynamo:",omitempty"`
+}
+
+type NasRegistration struct {
+	UUID           guuid.UUID `json:"uuid"`
+	UserId         string     `json:"userid"`
+	IpAddress      string     `json:"ipaddress"`
+	AgentInstalled string     `json:"agent"`
+	NasPaths       string     `json:"naspath"`
+	SshKeyPath     string     `json:"keypath,omitempty" ,dynamo:",omitempty"`
+	CreationDate   time.Time  `json:"creation_date,omitempty" ,dynamo:",omitempty"`
 }
 
 func Handler(ctx context.Context, S3Event events.S3Event) {
@@ -107,6 +118,25 @@ func Handler(ctx context.Context, S3Event events.S3Event) {
 			}
 			p.SshKeyPath = S3Event.Records[0].S3.Object.Key
 
+			err = table.Put(p).Run()
+			if err != nil {
+				fmt.Println(err.Error())
+			}
+		}
+	}
+	if uploadedFor == "nas" {
+		connectDb(nasTable)
+		//Get entry
+		var cps []NasRegistration
+		table.Scan().Filter("$ = ?", "UUID", uuid).All(&cps)
+		if len(cps) != 0 {
+			var p NasRegistration
+			err := table.Get("UUID", cps[0].UUID).One(&p)
+			if err != nil {
+				fmt.Println(err.Error())
+				return
+			}
+			p.SshKeyPath = S3Event.Records[0].S3.Object.Key
 			err = table.Put(p).Run()
 			if err != nil {
 				fmt.Println(err.Error())
