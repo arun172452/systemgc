@@ -24,7 +24,8 @@ provider:
       Action:
         - "ec2:DescribeInstances"
         - dynamodb:*
-        - s3:*
+        - SES:*
+        - SNS:*
       Resource:
         "*"
     - Effect: Allow
@@ -49,7 +50,18 @@ functions:
     environment:
       aws_region: eu-central-1
       dynamo_table: systemgc-vm-registry
-
+  getreg:
+    handler: bin/getReg
+    package:
+      include:
+        - ./bin/getReg
+    events:
+      - http:
+          path: registrations
+          method: get
+    environment:
+      aws_region: eu-central-1
+      dynamo_table: systemgc-vm-registry
   registry:
     handler: bin/registry
     package:
@@ -64,6 +76,21 @@ functions:
       dynamo_table: systemgc-vm-registry
       aws_region: eu-central-1
       s3_bucket_name: rskautomation
+  delete:
+    handler: bin/delete
+    package:
+      include:
+        - ./bin/delete
+    events:
+      - http:
+          path: delete/{uuid}
+          method: delete
+          cors: true
+    environment:
+      dynamo_table: systemgc-vm-registry
+      aws_region: eu-central-1
+      s3_bucket_name: rskautomation
+      sns_topic: arn:aws:sns:eu-central-1:957065358755:deletefile
 resources:
   Resources:
     GatewayResponseDefault4XX:
