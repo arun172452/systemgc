@@ -1,4 +1,4 @@
-service: vm-stop-scheduler
+service: vm-start-scheduler
 
 frameworkVersion: '>=2.0.0 <3.0.0'
 
@@ -28,9 +28,9 @@ functions:
   registry:
     handler: bin/registry
     events:
-      - schedule: cron(0 19 ? * FRI *)
+      - schedule: cron(0 8 ? * MON *)
     environment:
-      ec2_sns_topic: arn:aws:sns:eu-central-1:957065358755:ec2-stop-event
-      vm_sns_topic: arn:aws:sns:eu-central-1:957065358755:vm-stop-event
+      ec2_sns_topic: arn:aws:sns:eu-central-1:957065358755:ec2-start-event
+      vm_sns_topic: arn:aws:sns:eu-central-1:957065358755:vm-start-event
       dynamo_table: systemgc-vm-registry
       aws_region: eu-central-1

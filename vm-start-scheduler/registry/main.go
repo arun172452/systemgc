@@ -71,7 +71,7 @@ func sendStopEvent(data []SystemGCVM) {
 				return
 			}
 			sjson := string(json)
-			log.Printf("Sending stop event for ec2: %s", vm.InstanceId)
+			log.Printf("Sending start event for ec2: %s", vm.InstanceId)
 			_, err = svc.Publish(&sns.PublishInput{
 				Message:  &sjson,
 				TopicArn: &snsTopic,
@@ -86,7 +86,7 @@ func sendStopEvent(data []SystemGCVM) {
 				return
 			}
 			sjson := string(json)
-			log.Printf("Sending stop event for vm: %s", vm.InstanceId)
+			log.Printf("Sending start event for vm: %s", vm.InstanceId)
 			_, err = svc.Publish(&sns.PublishInput{
 				Message:  &sjson,
 				TopicArn: &vmSnsTopic,
