@@ -25,6 +25,7 @@ type SystemGCVM struct {
 	SanCleanUp     string     `json:"sancleanup,omitempty" ,dynamo:",omitempty"`
 	AgentInstalled string     `json:"agent,omitempty" ,dynamo:",omitempty"`
 	SshKeyPath     string     `json:"keypath,omitempty" ,dynamo:",omitempty"`
+	SanPath        string     `json:"sanpath,omitempty" ,dynamo:",omitempty"`
 	CreationDate   time.Time  `json:"creation_date,omitempty" ,dynamo:",omitempty"`
 }
 
