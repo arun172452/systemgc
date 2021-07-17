@@ -25,3 +25,4 @@ functions:
       - sns: arn:aws:sns:eu-central-1:957065358755:deletefile
     environment:
       aws_region: eu-central-1
+      s3_bucket_name: rskautomation
