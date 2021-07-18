@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-18T10:17:45.787Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="AYiWEGXqPZIVHe6jexDv" version="14.9.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-07-18T10:20:49.524Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="uk5etX1g4yv0wupAFpDv" version="14.9.0" type="github">
   <diagram id="dFEMBiAQDfq9aI7LGW4W" name="Page-1">
     <mxGraphModel dx="1632" dy="1536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -167,8 +167,8 @@
             <mxPoint x="560" y="525" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_amGBRvCw-BMg0jFYthp-10" value="16. trigger Lambda on S3Bucket Upload Evnet" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="520" y="510" width="260" height="20" as="geometry" />
+        <mxCell id="_amGBRvCw-BMg0jFYthp-10" value="16. trigger Lambda on &lt;br&gt;S3Bucket Upload Evnet" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="540" y="505" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="_amGBRvCw-BMg0jFYthp-11" value="" style="endArrow=classic;html=1;" parent="1" source="_amGBRvCw-BMg0jFYthp-7" target="fIrhu684fTIpMeampoxX-19" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
