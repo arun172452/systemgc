@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-18T10:39:48.906Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="KUiv7d9oIPF4ssLrtKsA" version="14.9.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-07-18T10:39:58.371Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="nyifOZXqTk2P-E0DHmvn" version="14.9.0" type="github">
   <diagram id="dA-Dr5ijyXsP73QcPwFC" name="Page-1">
     <mxGraphModel dx="1632" dy="1536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -186,7 +186,7 @@
           <mxGeometry x="1040" y="120" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="75DIFjYeMuNkz-bYmkBv-8" value="Exceute DB Script/ &lt;br&gt;Delete Table Data Onpremise" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
-          <mxGeometry x="850" y="-18" width="170" height="30" as="geometry" />
+          <mxGeometry x="820" y="-40" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="75DIFjYeMuNkz-bYmkBv-9" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="EZSc4S11zAWebRSHGFNz-42">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
